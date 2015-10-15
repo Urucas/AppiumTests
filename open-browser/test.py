@@ -29,7 +29,7 @@ class OpenBrowserTests(unittest.TestCase):
         # end the session
         self.driver.quit()
 
-    def test_check_contexts(self):
+    def test_browser_is_opened(self):
         sleep(.5)
         contexts = self.driver.contexts
         self.assertIsNotNone(contexts)
@@ -41,7 +41,7 @@ class OpenBrowserTests(unittest.TestCase):
         el = self.driver.find_element_by_id("openBrowserBtt")
         self.assertIsNotNone(el)
         el.click()
-        sleep(1.5)
+        sleep(.9)
         contexts = self.driver.contexts
         print contexts
 
