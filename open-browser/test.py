@@ -41,10 +41,15 @@ class OpenBrowserTests(unittest.TestCase):
         el = self.driver.find_element_by_id("openBrowserBtt")
         self.assertIsNotNone(el)
         el.click()
-        sleep(.9)
+        sleep(0.9)
         contexts = self.driver.contexts
-        print contexts
+        has_webview = False
+        for i in range(0, len(contexts)):
+            search = re.search('WEBVIEW', contexts[i])
+            if search is not None:
+                has_webview = True
 
+        self.assertEquals(has_webview, True)
 
 if __name__ == '__main__':
     # run test suite
