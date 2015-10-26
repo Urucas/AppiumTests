@@ -49,11 +49,13 @@ class OpenBrowserTests(unittest.TestCase):
         self.driver.press_keycode(3)
         sleep(1)
 
+
+        """
         # press switch app button
         self.driver.press_keycode(187)
         sleep(1)
+        """
 
-        source = self.driver.page_source
         els = self.driver.find_elements_by_class_name("android.widget.TextView")
         el = None
         for el in els:
