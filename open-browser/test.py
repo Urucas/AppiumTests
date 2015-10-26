@@ -56,6 +56,21 @@ class OpenBrowserTests(unittest.TestCase):
         sleep(1)
         """
 
+        # click on the launcher icon
+        els = self.driver.find_elements_by_class_name("android.widget.TextView")
+        el = None
+        for el in els:
+            if el.get_attribute("text") == "":
+                break
+
+        self.assertIsNotNone(el)
+        el.click()
+        sleep(.3)
+
+        source = self.driver.page_source
+        # print source
+
+        # search for chrome button
         els = self.driver.find_elements_by_class_name("android.widget.TextView")
         el = None
         for el in els:
