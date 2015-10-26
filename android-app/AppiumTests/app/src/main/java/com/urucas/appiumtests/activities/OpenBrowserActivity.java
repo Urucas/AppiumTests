@@ -23,7 +23,7 @@ public class OpenBrowserActivity extends Activity {
         openBrowserBtt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.urucas.com")));
             }
         });
     }
