@@ -7,6 +7,7 @@ import json
 import re
 
 from appium import webdriver
+from appium.webdriver.common.touch_action import TouchAction
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -35,14 +36,36 @@ class OpenBrowserTests(unittest.TestCase):
         self.assertIsNotNone(contexts)
         self.assertEqual(contexts[0], "NATIVE_APP")
         el = self.driver.find_element_by_id("openBrowserBtt")
+        self.driver.save_screenshot(PATH('./screen.png'))
         self.assertIsNotNone(el)
         el.click()
         sleep(.5)
         el = self.driver.find_element_by_id("openBrowserBtt")
         self.assertIsNotNone(el)
         el.click()
-        sleep(0.9)
+        sleep(5)
+
+        # press home button
+        self.driver.press_keycode(3)
+        sleep(1)
+
+        # press switch app button
+        self.driver.press_keycode(187)
+        sleep(1)
+
+        source = self.driver.page_source
+        els = self.driver.find_elements_by_class_name("android.widget.TextView")
+        el = None
+        for el in els:
+            if el.get_attribute("text") == "Chrome":
+                break
+
+        self.assertIsNotNone(el)
+        el.click()
+        sleep(.3)
+
         contexts = self.driver.contexts
+        print contexts
         has_webview = False
         for i in range(0, len(contexts)):
             search = re.search('WEBVIEW', contexts[i])
@@ -50,6 +73,8 @@ class OpenBrowserTests(unittest.TestCase):
                 has_webview = True
 
         self.assertEquals(has_webview, True)
+        self.driver.quit()
+
 
 if __name__ == '__main__':
     # run test suite
