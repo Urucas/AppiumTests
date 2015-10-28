@@ -24,6 +24,15 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button openWebviewBtt = (Button) findViewById(R.id.openWebviewBtt);
+        openWebviewBtt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

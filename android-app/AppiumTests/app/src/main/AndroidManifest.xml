@@ -20,5 +20,9 @@
             android:name=".activities.OpenBrowserActivity"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".activities.W"
+            android:label="@string/app_name">
+        </activity>
     </application>
 </manifest>

@@ -20,6 +20,12 @@
                 android:text="Open Browser Test"
                 android:id="@+id/openBrowserBtt" />
 
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Open WebView Test"
+                android:id="@+id/openWebviewBtt" />
+
         </LinearLayout>
 
     </ScrollView>
