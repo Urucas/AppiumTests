@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.urucas.appiumtests" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +23,7 @@
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".activities.W"
+            android:name=".activities.WebViewActivity"
             android:label="@string/app_name">
         </activity>
     </application>

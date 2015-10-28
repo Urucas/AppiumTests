@@ -19,8 +19,7 @@ public class WebViewActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_open_browser);
-
+        setContentView(R.layout.activity_webview);
 
         WebView webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(false);
@@ -37,6 +36,6 @@ public class WebViewActivity extends Activity {
                 return true;
             }
         });
-        webView.loadUrl("http://urucas.com");
+        webView.loadUrl("http://www.urucas.com");
     }
 }
