@@ -26,6 +26,12 @@
                 android:text="Open WebView Test"
                 android:id="@+id/openWebviewBtt" />
 
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Open Request Permission Test"
+                android:id="@+id/openRequestBtt" />
+
         </LinearLayout>
 
     </ScrollView>

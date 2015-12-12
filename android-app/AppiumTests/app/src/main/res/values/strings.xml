@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="permission_state">Permission %1$s</string>
+    <string name="denied">denied :(</string>
+    <string name="granted">granted :)</string>
 </resources>

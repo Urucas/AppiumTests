@@ -33,6 +33,15 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button requestPermBtt = (Button) findViewById(R.id.openRequestBtt);
+        requestPermBtt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RequestPermissionsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
