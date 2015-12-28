@@ -1,0 +1,33 @@
+{
+  "name": "appium-socket.io-test",
+  "version": "0.0.1",
+  "description": "Simple Appium example integrating socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha tests/test.js -t 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Urucas/AppiumTests.git"
+  },
+  "keywords": [
+    "appium",
+    "web",
+    "sockets",
+    "socket.io",
+    "test",
+    "testing"
+  ],
+  "author": "Urucas <hello@urucas.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Urucas/AppiumTests/issues"
+  },
+  "homepage": "https://github.com/Urucas/AppiumTests#readme",
+  "dependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "mocha": "^2.3.4",
+    "socket.io": "^1.3.7"
+  }
+}
