@@ -42,6 +42,15 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button socketIOBtt = (Button) findViewById(R.id.openSocketIOBtt);
+        socketIOBtt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SocketIOActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

@@ -2,8 +2,6 @@ package com.urucas.appiumtests.activities;
 
 import android.app.Application;
 
-import com.facebook.stetho.Stetho;
-
 /**
  * Created by vruno on 12/11/15.
  */

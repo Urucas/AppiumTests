@@ -6,4 +6,7 @@
     <string name="permission_state">Permission %1$s</string>
     <string name="denied">denied :(</string>
     <string name="granted">granted :)</string>
+    <string name="socket_status">State; %1$s</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
 </resources>
