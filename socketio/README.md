@@ -118,4 +118,4 @@ it("should change text on socket event", function(done) {
   ```
 ... complete test is [here](https://github.com/Urucas/AppiumTests/blob/master/socketio/tests/test.js)
 
-Once we have wrapped everyting, we run our test ```npm test`` and wait for the results. 
+Once we have wrapped everyting, we run our test ```npm test``` and wait for the results. 
