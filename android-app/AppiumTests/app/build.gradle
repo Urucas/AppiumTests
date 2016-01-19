@@ -32,6 +32,7 @@ ext {
 }
 
 task isAppiumRunning() << {
+    println "Checking appium is running!"
     def request = ["curl", "http://127.0.0.1:$appiumPort/wd/hub/status"].execute()
     request.waitFor()
     if(request.exitValue() != 0) {
@@ -47,9 +48,23 @@ task isAppiumRunning() << {
 }
 
 task appium(dependsOn: [isAppiumRunning, assembleRelease]) << {
-    def process = ["python", "../../swipe/test.py"].execute()
-    process.waitFor()
-    System.exit(process.exitValue())
+    println "Running some tests"
+
+    def test1 = ["python", "../../swipe/test.py"].execute()
+    test1.waitFor()
+    if(test1.exitValue() != 0) {
+        println "Test failed, $test1.text"
+        System.exit(test1.exitValue())
+    }
+
+    def test2 = ["python", "../../request-permission/test.py"].execute()
+    test2.waitFor()
+    if(test2.exitValue() != 0) {
+        println "Test failed, $test2.text"
+        System.exit(test2.exitValue())
+    }
+    println "All test passed"
+    System.exit(0)
 }
 
 
