@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 23
@@ -25,3 +26,30 @@ dependencies {
     compile 'com.android.support:design:23.1.0'
     compile 'io.socket:socket.io-client:0.6.2'
 }
+
+ext {
+    appiumPort = 4723
+}
+
+task isAppiumRunning() << {
+    def request = ["curl", "http://127.0.0.1:$appiumPort/wd/hub/status"].execute()
+    request.waitFor()
+    if(request.exitValue() != 0) {
+        println "Failed to run test, Appium is not running"
+        System.exit(1)
+    }
+    def response = new groovy.json.JsonSlurper().parseText(request.text)
+    if(response.status != 0) {
+        println "Failed to run test, Appium is not running"
+        println "Status Code: $response.status"
+        System.exit(1)
+    }
+}
+
+task appium(dependsOn: [isAppiumRunning, assembleRelease]) << {
+    def process = ["python", "../../swipe/test.py"].execute()
+    process.waitFor()
+    System.exit(process.exitValue())
+}
+
+
