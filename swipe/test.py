@@ -1,5 +1,6 @@
 import os
 from time import sleep
+import sys
 
 import unittest
 import argparse
@@ -66,6 +67,7 @@ class SwipeTests(unittest.TestCase):
 if __name__ == '__main__':
     # run test suite
     suite = unittest.TestLoader().loadTestsFromTestCase(SwipeTests)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    ret = not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful()
+    sys.exit(ret)
 
 

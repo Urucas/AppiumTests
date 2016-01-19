@@ -5,6 +5,7 @@ import unittest
 import argparse
 import json
 import re
+import sys
 
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
@@ -80,6 +81,7 @@ class RequestPermissionTests(unittest.TestCase):
 if __name__ == '__main__':
     # run test suite
     suite = unittest.TestLoader().loadTestsFromTestCase(RequestPermissionTests)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    ret = not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful()
+    sys.exit(ret)
 
 
