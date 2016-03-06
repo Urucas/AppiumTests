@@ -25,7 +25,6 @@ class FlagSecure(unittest.TestCase):
         result = subprocess.check_output(["sauce-uploader", 
           keys["user"], keys["accessKey"], app_path])
         response = json.loads(result)
-        print response
         try:
           filename = response["filename"]
         except Exception, e:
@@ -72,10 +71,10 @@ class FlagSecure(unittest.TestCase):
         
         el = self.driver.find_element_by_id("textView")
         self.assertIsNotNone(el)
-        sleep(.5)
+        sleep(1.5)
         
-        el = self.driver.find_element_by_id("insecureBtt")
-        el.click()
+        # el = self.driver.find_element_by_id("insecureBtt")
+        # el.click()
         sleep(5)
         
 
