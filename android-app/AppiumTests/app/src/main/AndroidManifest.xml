@@ -41,5 +41,9 @@
             android:name=".activities.SocketIOActivity"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".activities.FlagSecureActivity"
+            android:label="@string/app_name">
+        </activity>
     </application>
 </manifest>

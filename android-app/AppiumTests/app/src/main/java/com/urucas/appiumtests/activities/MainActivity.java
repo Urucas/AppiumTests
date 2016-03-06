@@ -51,6 +51,15 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button flagBtt = (Button) findViewById(R.id.openFlagBtt);
+        flagBtt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FlagSecureActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

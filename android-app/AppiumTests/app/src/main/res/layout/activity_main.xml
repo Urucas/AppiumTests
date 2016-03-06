@@ -38,6 +38,12 @@
                 android:text="Open Socket.io Test"
                 android:id="@+id/openSocketIOBtt" />
 
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Open FlagSecure Test"
+                android:id="@+id/openFlagBtt" />
+
         </LinearLayout>
 
     </ScrollView>
